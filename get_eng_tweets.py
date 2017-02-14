@@ -12,8 +12,8 @@ for line in open(sys.argv[1], 'r'):
 # Extract English language tweets from corpus
 eng_tweets = []
 for i in range(len(tweets)):
-    if 'lang' in tweets[i].keys():
-        if tweets[i]['lang'] == 'en':
+    if 'lang' in tweets[i].keys(): # Not all tweets have 'lang' key
+        if tweets[i]['lang'] == 'en': 
             eng_tweets.append(tweets[i])
             
 # Write English tweets iteratively to JSON output file

@@ -29,7 +29,8 @@ for line in tweet_file:
 # Extract text from each tweet
 texts = []
 for i in range(len(tweets)):
-    texts.append(tweets[i]['text'])
+    if 'text' in tweets[i].keys(): # Not all tweets have 'text' key
+        texts.append(tweets[i]['text'])
 
 # Define text splitting/cleaning fcn    
 def clean(text):
